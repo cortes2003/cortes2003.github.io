@@ -65,7 +65,6 @@ body::before {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-
 /* HERO SECTION */
 #hero {
     position: relative;
@@ -81,72 +80,102 @@ body::before {
     z-index: 1;
 }
 
-/* NUEVA ANIMACIÓN PARA EL DEGRADADO */
+/* ANIMACIÓN PARA EL DEGRADADO */
 @keyframes moveGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* NOMBRE CON TAMAÑO AJUSTADO Y DEGRADADO ANIMADO */
+/* NOMBRE CON DEGRADADO ANIMADO */
 .hero-name {
-    font-size: 4rem; /* Un poco más pequeño */
+    font-size: 4rem;
     font-weight: 700;
     letter-spacing: 3px;
     margin: 0 0 30px 0;
-    background: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff); /* Añadimos el color inicial al final para un bucle suave */
+    background: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    background-size: 200% 200%; /* Hacemos el fondo más grande para que la animación sea visible */
-    animation: moveGradient 4s ease-in-out infinite; /* Aplicamos la animación */
+    background-size: 200% 200%;
+    animation: moveGradient 4s ease-in-out infinite;
 }
 
-
-/* BOTÓN DE CV CON DEGRADADO ANIMADO */
+/* BOTÓN DE CV ESTILO "GHOST" CON BORDE ANIMADO */
 .btn-cv-hero {
     display: inline-block;
     padding: 12px 35px;
-    border: none; /* Quitamos el borde, el degradado lo reemplaza */
+    border: 2px solid transparent; /* Borde transparente por defecto */
     border-radius: 50px;
-    color: #fff; /* Texto blanco para que contraste */
     text-decoration: none;
     font-weight: bold;
-    background: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-image: linear-gradient(#0d0d0d, #0d0d0d), linear-gradient(45deg, #00aaff, #aa00ff, #00aaff); /* Doble fondo: uno para el color interior, otro para el borde */
     background-size: 200% 200%;
     animation: moveGradient 4s ease-in-out infinite;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+}
+
+/* Estilo del texto dentro del botón "ghost" */
+.btn-cv-hero span {
+    background: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: moveGradient 4s ease-in-out infinite;
 }
 
 .btn-cv-hero:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(170, 0, 255, 0.5); /* Sombra morada al pasar el ratón */
+    color: #fff;
+    background-clip: padding-box; /* Al pasar el ratón, el fondo de color se aplica a todo el botón */
+}
+
+.btn-cv-hero:hover span {
+    -webkit-text-fill-color: #fff; /* El texto se vuelve blanco sólido */
 }
 
 
-/* SECCIONES */
+/* SECCIONES CON MÁS SEPARACIÓN */
 main, footer { 
     width: 90%; 
     max-width: 800px; 
     margin: 0 auto; 
-    padding: 120px 0; 
+    padding: 150px 0; /* Aumentamos el padding para más espacio */
 }
+#sobre-mi { padding-top: 0; } /* La primera sección no necesita tanto espacio arriba */
 
 h2 { font-size: 2.5rem; color: #00aaff; margin-bottom: 50px; text-align: center; }
 p { font-size: 1.1rem; line-height: 1.7; color: #b3b3b3; }
 .hidden { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .show { opacity: 1; transform: translateY(0); }
-.proyectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.proyectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
 .proyecto-card { background: transparent; border-bottom: 1px solid #333; padding-bottom: 20px; }
 .proyecto-card h3 { color: #fff; }
 .proyecto-card p { margin-bottom: 15px; }
-.proyecto-card a { display: inline-block; background-color: #00aaff; color: #0d0d0d; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: transform 0.3s; }
-.proyecto-card a:hover { transform: scale(1.05); }
 
-/* BARRAS DE HABILIDAD CON NUEVO DEGRADADO */
+/* BOTONES "VER CÓDIGO" CON DEGRADADO ESTÁTICO */
+.proyecto-card a { 
+    display: inline-block; 
+    background: linear-gradient(90deg, #00aaff, #5500ff);
+    color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+    border: none;
+}
+.proyecto-card a:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 15px rgba(85, 0, 255, 0.5);
+}
+
+/* BARRAS DE HABILIDAD */
 .skill-bar-container { background-color: #333; border-radius: 10px; overflow: hidden; }
 .skill-bar { 
-    background: linear-gradient(90deg, #00aaff, #aa00ff); /* Degradado azul a morado */
+    background: linear-gradient(90deg, #00aaff, #aa00ff);
     height: 15px; 
     width: 0; 
     border-radius: 10px; 
