@@ -8,71 +8,112 @@ body {
     overflow-x: hidden;
 }
 
-/* HERO SECTION Y NUEVA ANIMACIÓN DE FONDO */
+/* NAVEGACIÓN LATERAL FIJA */
+.side-nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+.side-nav a {
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.side-nav a:hover {
+    color: #00aaff;
+    /* Sombra blanca sutil al pasar el ratón */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+
+/* HERO SECTION CON FONDO DE ESTRELLAS */
 #hero {
-    position: relative; /* Necesario para posicionar las líneas de código dentro */
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: hidden; /* Oculta lo que se salga del hero */
+    overflow: hidden;
 }
 
-.code-lines span {
+/* FONDO DE ESTRELLAS ANIMADO (Restaurado) */
+#hero::before {
+    content: '';
     position: absolute;
-    display: block;
-    width: 200px; /* Ancho de la línea de código */
-    height: 2px; /* Grosor */
-    background: #00aaff;
-    opacity: 0;
-    animation: codeFade 8s infinite;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, #fff, transparent),
+        radial-gradient(1px 1px at 80% 40%, #fff, transparent),
+        radial-gradient(1px 1px at 50% 70%, #fff, transparent),
+        radial-gradient(2px 2px at 30% 90%, #ddd, transparent);
+    background-size: 50% 100%;
+    animation: moveStars 150s linear infinite;
+    z-index: -1;
 }
 
-/* Posicionamos cada línea en un lugar diferente y le damos un retardo */
-.code-lines span:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-.code-lines span:nth-child(2) { top: 50%; left: 80%; animation-delay: 1.5s; width: 150px; }
-.code-lines span:nth-child(3) { top: 80%; left: 30%; animation-delay: 3s; width: 250px; }
-.code-lines span:nth-child(4) { top: 30%; left: 60%; animation-delay: 4.5s; width: 180px; }
-.code-lines span:nth-child(5) { top: 65%; left: 5%;  animation-delay: 6s; }
-
-/* Keyframes para la animación de aparición y desvanecimiento */
-@keyframes codeFade {
-    0% { opacity: 0; transform: translateX(-20px); }
-    10% { opacity: 0.5; }
-    80% { opacity: 0.5; }
-    100% { opacity: 0; transform: translateX(20px); }
+@keyframes moveStars {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
 .hero-content {
-    z-index: 1; /* Nos aseguramos que el nombre y nav estén por encima de la animación */
+    z-index: 1;
 }
 
 .hero-name {
     font-size: 4rem;
     font-weight: 300;
     letter-spacing: 2px;
-    margin: 0;
+    margin: 0 0 30px 0; /* Espacio para el botón de CV */
     animation: fadeIn 2s ease-in;
 }
-/* ... (El resto del CSS es igual que antes) ... */
 
-.hero-nav a { color: #00aaff; text-decoration: none; margin: 0 15px; font-size: 1.2rem; transition: color 0.3s; }
-.hero-nav a:hover { color: #fff; }
+/* NUEVO BOTÓN DE CV OVALADO */
+.btn-cv-hero {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 2px solid #00aaff;
+    border-radius: 50px; /* Esto lo hace ovalado */
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-cv-hero:hover {
+    background-color: #00aaff;
+    color: #0d0d0d;
+}
+
+
+/* RESTO DEL CSS (sin cambios importantes) */
 main, footer { width: 90%; max-width: 800px; margin: 0 auto; padding: 80px 0; }
 h2 { font-size: 2.5rem; color: #00aaff; margin-bottom: 40px; text-align: center; }
 p { font-size: 1.1rem; line-height: 1.7; color: #b3b3b3; }
 .hidden { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .show { opacity: 1; transform: translateY(0); }
 .proyectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-.proyecto-card { background: transparent; border: none; padding: 0; }
+.proyecto-card { background: transparent; border-bottom: 1px solid #333; padding-bottom: 20px; }
 .proyecto-card h3 { color: #fff; }
 .proyecto-card p { margin-bottom: 15px; }
 .proyecto-card a { display: inline-block; background-color: #00aaff; color: #0d0d0d; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: transform 0.3s; }
 .proyecto-card a:hover { transform: scale(1.05); }
-.skill-bar-container { background-color: #333; }
+.skill-bar-container { background-color: #333; border-radius: 10px; overflow: hidden; }
 .skill-bar { background-color: #00aaff; height: 15px; width: 0; border-radius: 10px; transition: width 1.5s ease-in-out; }
-footer { text-align: center; }
+footer { text-align: center; padding-top: 40px; border-top: 1px solid #333; }
 .iconos-contacto a { color: #e0e0e0; font-size: 2.5rem; margin: 0 20px; transition: color 0.3s, transform 0.3s; }
 .iconos-contacto a:hover { color: #00aaff; transform: translateY(-5px); }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

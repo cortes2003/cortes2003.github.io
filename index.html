@@ -9,39 +9,46 @@
 </head>
 <body>
 
+    <nav class="side-nav">
+        <a href="#hero" aria-label="Inicio"><i class="fas fa-home"></i></a>
+        <a href="#sobre-mi" aria-label="Sobre mí"><i class="fas fa-user"></i></a>
+        <a href="#proyectos" aria-label="Proyectos"><i class="fas fa-briefcase"></i></a>
+        <a href="#habilidades" aria-label="Habilidades"><i class="fas fa-code"></i></a>
+        <a href="#contacto" aria-label="Contacto"><i class="fas fa-envelope"></i></a>
+    </nav>
+
     <div id="hero">
-        <div class="code-lines">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <div class="hero-content">
             <h1 class="hero-name">Alberto Cortés Herranz</h1>
-            <nav class="hero-nav">
-                <a href="#sobre-mi">Sobre mí</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#habilidades">Habilidades</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
+            <a href="CV.pdf" download class="btn-cv-hero">Descargar CV</a>
         </div>
     </div>
 
     <main>
         <section id="sobre-mi" class="hidden">
-            <h2>Hola, soy Alberto</h2>
+            <h2>Hola, soy Alberto 👋</h2>
             <p>
                 Estudiante de Ingeniería Informática apasionado por el desarrollo de software y la resolución de problemas. 
                 Busco oportunidades para aplicar mis conocimientos en entornos desafiantes y seguir aprendiendo de profesionales del sector.
             </p>
-            <a href="CV.pdf" download class="btn-cv">Descargar CV</a>
         </section>
 
         <section id="proyectos" class="hidden">
             <h2>Mis Proyectos</h2>
             <div class="proyectos-grid">
+                <div class="proyecto-card">
+                    <h3>Nombre del Proyecto 1</h3>
+                    <p>Descripción breve de lo que hace el proyecto y el problema que soluciona.</p>
+                    <p><strong>Tecnologías:</strong> Java, Spring Boot, MySQL</p>
+                    <a href="URL_A_TU_REPO_EN_GITHUB" target="_blank">Ver Código</a>
                 </div>
+                <div class="proyecto-card">
+                    <h3>Nombre del Proyecto 2</h3>
+                    <p>Descripción breve de lo que hace el proyecto y el problema que soluciona.</p>
+                    <p><strong>Tecnologías:</strong> Python, Django, PostgreSQL</p>
+                    <a href="URL_A_TU_REPO_EN_GITHUB" target="_blank">Ver Código</a>
+                </div>
+            </div>
         </section>
 
         <section id="habilidades" class="hidden">
@@ -49,31 +56,31 @@
             <div class="skills-container">
                 <div class="skill">
                     <p>Java</p>
-                    <div class="skill-bar-container"><div class="skill-bar" data-progress="90%"></div></div>
-                </div>
-                <div class="skill">
-                    <p>Python</p>
-                    <div class="skill-bar-container"><div class="skill-bar" data-progress="85%"></div></div>
-                </div>
-                <div class="skill">
-                    <p>C / C++</p>
-                    <div class="skill-bar-container"><div class="skill-bar" data-progress="75%"></div></div>
-                </div>
-                <div class="skill">
-                    <p>HTML & CSS</p>
-                    <div class="skill-bar-container"><div class="skill-bar" data-progress="95%"></div></div>
-                </div>
-                 <div class="skill">
-                    <p>JavaScript</p>
-                    <div class="skill-bar-container"><div class="skill-bar" data-progress="70%"></div></div>
-                </div>
-                <div class="skill">
-                    <p>SQL (MySQL y Oracle)</p>
                     <div class="skill-bar-container"><div class="skill-bar" data-progress="80%"></div></div>
                 </div>
                 <div class="skill">
+                    <p>Python</p>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="80%"></div></div>
+                </div>
+                <div class="skill">
+                    <p>SQL</p>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="60%"></div></div>
+                </div>
+                <div class="skill">
                     <p>Git & GitHub</p>
-                    <div class="skill-bar-container"><div class="skill-bar" data-progress="90%"></div></div>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="60%"></div></div>
+                </div>
+                <div class="skill">
+                    <p>HTML & CSS</p>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="55%"></div></div>
+                </div>
+                <div class="skill">
+                    <p>JavaScript</p>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="55%"></div></div>
+                </div>
+                <div class="skill">
+                    <p>C / C++</p>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="40%"></div></div>
                 </div>
             </div>
         </section>
