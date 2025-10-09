@@ -78,6 +78,7 @@ body::before {
 
 .hero-content {
     z-index: 1;
+    width: 90%;
 }
 
 /* ANIMACIÓN PARA EL DEGRADADO */
@@ -136,7 +137,7 @@ body::before {
 }
 
 /* CONTENEDOR PRINCIPAL Y FOOTER */
-main { 
+main, footer { 
     width: 90%; 
     max-width: 800px; 
     margin: 0 auto; 
@@ -188,14 +189,14 @@ p { font-size: 1.1rem; line-height: 1.7; color: #b3b3b3; }
     transition: width 1.5s ease-in-out; 
 }
 
-/* FOOTER CON ESPACIO INFERIOR AÑADIDO */
+/* FOOTER */
 footer { 
     width: 90%; 
     max-width: 800px; 
     margin: 0 auto;
     text-align: center; 
     padding-top: 40px; 
-    padding-bottom: 50px; /* Espacio extra añadido en la parte inferior */
+    padding-bottom: 50px;
     border-top: 1px solid #333; 
 }
 .iconos-contacto a { 
@@ -207,4 +208,52 @@ footer {
 .iconos-contacto a:hover { 
     color: #00aaff; 
     transform: translateY(-5px); 
+}
+
+/* ========================================= */
+/* ESTILOS RESPONSIVE PARA MÓVILES Y TABLETS */
+/* ========================================= */
+@media (max-width: 768px) {
+
+    /* Navegación pasa a la parte inferior */
+    .side-nav {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
+        transform: none;
+        background-color: rgba(13, 13, 13, 0.8); /* Fondo semitransparente */
+        backdrop-filter: blur(5px); /* Efecto de desenfoque */
+        padding: 5px 0;
+    }
+    .side-nav a {
+        padding: 10px 15px;
+    }
+
+    /* Reducimos el tamaño del nombre */
+    .hero-name {
+        font-size: 2.8rem;
+    }
+
+    /* Reducimos el espaciado entre secciones */
+    main > section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    #sobre-mi {
+        padding-top: 80px;
+    }
+    
+    /* Ajustamos el tamaño de los títulos y el footer */
+    h2 {
+        font-size: 2rem;
+    }
+    footer {
+        /* Añadimos más espacio abajo para que no choque con la nueva nav */
+        padding-bottom: 80px; 
+    }
 }
