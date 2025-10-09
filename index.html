@@ -9,28 +9,29 @@
 </head>
 <body>
 
-    <header>
-        <nav>
-            <h1>Alberto Cortés Herranz</h1>
-            <ul>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#habilidades">Habilidades</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">Alberto Cortés Herranz</h1>
+            <nav class="hero-nav">
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </div>
 
     <main>
-        <section id="sobre-mi">
+        <section id="sobre-mi" class="hidden">
             <h2>Hola, soy Alberto</h2>
             <p>
                 Estudiante de Ingeniería Informática apasionado por el desarrollo de software y la resolución de problemas. 
-                Aquí puedes poner tu párrafo de presentación.
+                Busco oportunidades para aplicar mis conocimientos en entornos desafiantes y seguir aprendiendo de profesionales del sector.
             </p>
-            <a href="CV_Alberto_Cortes_Herranz.pdf" download class="btn-cv">Descargar CV</a>
+            <a href="CV.pdf" download class="btn-cv">Descargar CV</a>
         </section>
 
-        <section id="proyectos">
+        <section id="proyectos" class="hidden">
             <h2>Mis Proyectos</h2>
             <div class="proyectos-grid">
                 <div class="proyecto-card">
@@ -45,56 +46,28 @@
                     <p><strong>Tecnologías:</strong> Python, JavaScript, HTML, CSS</p>
                     <a href="URL_A_TU_REPO_EN_GITHUB" target="_blank">Ver Código</a>
                 </div>
-            </div>
+                </div>
         </section>
 
-        <section id="habilidades">
+        <section id="habilidades" class="hidden">
             <h2>Habilidades Técnicas</h2>
             <div class="skills-container">
-                <div class="skill">
+                 <div class="skill">
                     <p>Java</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-progress="90%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>Python</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-progress="85%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>C / C++</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-progress="75%"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <p>HTML & CSS</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-progress="95%"></div>
-                    </div>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="90%"></div></div>
                 </div>
                  <div class="skill">
-                    <p>JavaScript</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-progress="70%"></div>
-                    </div>
+                    <p>Python</p>
+                    <div class="skill-bar-container"><div class="skill-bar" data-progress="85%"></div></div>
                 </div>
-                <div class="skill">
-                    <p>UNIX</p>
-                    <div class="skill-bar-container">
-                        <div class="skill-bar" data-progress="80%"></div>
-                    </div>
                 </div>
-            </div>
         </section>
     </main>
 
-    <footer id="contacto">
+    <footer id="contacto" class="hidden">
         <h2>Contacto</h2>
         <div class="iconos-contacto">
-             <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
             <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:tuemail@dominio.com"><i class="fas fa-envelope"></i></a>
         </div>

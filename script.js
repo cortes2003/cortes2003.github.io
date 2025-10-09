@@ -1,37 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Smooth scroll para los enlaces de navegación
+    // 1. SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            
+            // Si es el hero, vamos arriba del todo
+            if (targetId === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         });
     });
 
-    // Animación para las barras de habilidades
+    // 2. ANIMACIÓN DE "FADE-IN" AL HACER SCROLL
+    const hiddenElements = document.querySelectorAll('.hidden');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                // Opcional: deja de observar el elemento una vez que es visible
+                // observer.unobserve(entry.target); 
+            } else {
+                 // Opcional: si quieres que la animación se repita al salir y entrar
+                entry.target.classList.remove('show');
+            }
+        });
+    }, {
+        threshold: 0.15 // Se activa cuando el 15% del elemento es visible
+    });
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    // 3. ANIMACIÓN PARA LAS BARRAS DE HABILIDADES (se activa con la misma lógica)
     const skillsSection = document.querySelector('#habilidades');
     const skillBars = document.querySelectorAll('.skill-bar');
 
-    const animateSkills = () => {
-        skillBars.forEach(bar => {
-            const progress = bar.getAttribute('data-progress');
-            bar.style.width = progress;
-        });
-    };
+    const skillsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            skillBars.forEach(bar => {
+                bar.style.width = bar.getAttribute('data-progress');
+            });
+            skillsObserver.unobserve(skillsSection);
+        }
+    }, { threshold: 0.5 });
 
-    // Usamos Intersection Observer para animar solo cuando sea visible
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkills();
-                observer.unobserve(entry.target); // Para que la animación ocurra solo una vez
-            }
-        });
-    }, { threshold: 0.5 }); // Se activa cuando el 50% de la sección es visible
+    skillsObserver.observe(skillsSection);
 
-    observer.observe(skillsSection);
 });
-
-console.log("Portfolio V2 cargado y listo.");
