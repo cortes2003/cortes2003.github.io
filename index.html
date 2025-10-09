@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alberto Cortés Herranz - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
@@ -21,11 +22,12 @@
 
     <main>
         <section id="sobre-mi">
-            <h2>Hola, soy Alberto Cortés Herranz</h2>
+            <h2>Hola, soy Alberto</h2>
             <p>
                 Estudiante de Ingeniería Informática apasionado por el desarrollo de software y la resolución de problemas. 
                 Aquí puedes poner tu párrafo de presentación.
             </p>
+            <a href="CV_Alberto_Cortes_Herranz.pdf" download class="btn-cv">Descargar CV</a>
         </section>
 
         <section id="proyectos">
@@ -43,29 +45,60 @@
                     <p><strong>Tecnologías:</strong> Python, JavaScript, HTML, CSS</p>
                     <a href="URL_A_TU_REPO_EN_GITHUB" target="_blank">Ver Código</a>
                 </div>
-                </div>
+            </div>
         </section>
 
         <section id="habilidades">
             <h2>Habilidades Técnicas</h2>
-            <ul>
-                <li>Java</li>
-                <li>Python</li>
-                <li>C/C++</li>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>SQL (MySQL)</li>
-                <li>Git & GitHub</li>
-                <li>UNIX</li>
-            </ul>
+            <div class="skills-container">
+                <div class="skill">
+                    <p>Java</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-progress="90%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>Python</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-progress="85%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>C / C++</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-progress="75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>HTML & CSS</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-progress="95%"></div>
+                    </div>
+                </div>
+                 <div class="skill">
+                    <p>JavaScript</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-progress="70%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>UNIX</p>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" data-progress="80%"></div>
+                    </div>
+                </div>
+            </div>
         </section>
-
     </main>
 
     <footer id="contacto">
         <h2>Contacto</h2>
-        <p>Puedes contactarme en mi email: <a href="mailto:tuemail@dominio.com">Alberto.Cortes1@alu.uclm.es</a></p>
-        </footer>
+        <div class="iconos-contacto">
+             <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:tuemail@dominio.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
