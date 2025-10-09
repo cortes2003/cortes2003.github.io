@@ -1,45 +1,51 @@
-/* FUENTE Y ESTILOS GENERALES */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0d0d0d; /* Un negro casi puro */
+    background-color: #0d0d0d;
     color: #e0e0e0;
     margin: 0;
-    overflow-x: hidden; /* Evita barras de scroll horizontales */
+    overflow-x: hidden;
 }
 
-/* FONDO DE ESTRELLAS ANIMADO */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(1px 1px at 20% 30%, #fff, transparent),
-        radial-gradient(1px 1px at 80% 10%, #fff, transparent),
-        radial-gradient(1px 1px at 50% 70%, #fff, transparent),
-        radial-gradient(2px 2px at 90% 80%, #ddd, transparent);
-    background-size: 300px 300px;
-    animation: moveStars 200s linear infinite;
-    z-index: -1;
-}
-
-@keyframes moveStars {
-    from { transform: translateX(0); }
-    to { transform: translateX(-3000px); }
-}
-
-/* HERO SECTION (PANTALLA INICIAL) */
+/* HERO SECTION Y NUEVA ANIMACIÓN DE FONDO */
 #hero {
-    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    position: relative; /* Necesario para posicionar las líneas de código dentro */
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden; /* Oculta lo que se salga del hero */
+}
+
+.code-lines span {
+    position: absolute;
+    display: block;
+    width: 200px; /* Ancho de la línea de código */
+    height: 2px; /* Grosor */
+    background: #00aaff;
+    opacity: 0;
+    animation: codeFade 8s infinite;
+}
+
+/* Posicionamos cada línea en un lugar diferente y le damos un retardo */
+.code-lines span:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.code-lines span:nth-child(2) { top: 50%; left: 80%; animation-delay: 1.5s; width: 150px; }
+.code-lines span:nth-child(3) { top: 80%; left: 30%; animation-delay: 3s; width: 250px; }
+.code-lines span:nth-child(4) { top: 30%; left: 60%; animation-delay: 4.5s; width: 180px; }
+.code-lines span:nth-child(5) { top: 65%; left: 5%;  animation-delay: 6s; }
+
+/* Keyframes para la animación de aparición y desvanecimiento */
+@keyframes codeFade {
+    0% { opacity: 0; transform: translateX(-20px); }
+    10% { opacity: 0.5; }
+    80% { opacity: 0.5; }
+    100% { opacity: 0; transform: translateX(20px); }
+}
+
+.hero-content {
+    z-index: 1; /* Nos aseguramos que el nombre y nav estén por encima de la animación */
 }
 
 .hero-name {
@@ -49,90 +55,24 @@ body::before {
     margin: 0;
     animation: fadeIn 2s ease-in;
 }
+/* ... (El resto del CSS es igual que antes) ... */
 
-.hero-nav a {
-    color: #00aaff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.hero-nav a:hover {
-    color: #fff;
-}
-
-/* LAYOUT LIMPIO PARA EL CONTENIDO PRINCIPAL */
-main, footer {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 80px 0; /* Espaciado vertical entre secciones */
-}
-
-h2 {
-    font-size: 2.5rem;
-    color: #00aaff;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #b3b3b3;
-}
-
-/* ANIMACIONES DE SCROLL (FADE-IN) */
-.hidden {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ESTILOS PARA PROYECTOS (SIN CAJAS VISIBLES) */
-.proyectos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.proyecto-card {
-    background: transparent; /* Sin fondo */
-    border: none; /* Sin bordes */
-    padding: 0; /* Sin padding */
-}
-
+.hero-nav a { color: #00aaff; text-decoration: none; margin: 0 15px; font-size: 1.2rem; transition: color 0.3s; }
+.hero-nav a:hover { color: #fff; }
+main, footer { width: 90%; max-width: 800px; margin: 0 auto; padding: 80px 0; }
+h2 { font-size: 2.5rem; color: #00aaff; margin-bottom: 40px; text-align: center; }
+p { font-size: 1.1rem; line-height: 1.7; color: #b3b3b3; }
+.hidden { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.show { opacity: 1; transform: translateY(0); }
+.proyectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.proyecto-card { background: transparent; border: none; padding: 0; }
 .proyecto-card h3 { color: #fff; }
 .proyecto-card p { margin-bottom: 15px; }
-
-.proyecto-card a {
-    display: inline-block;
-    background-color: #00aaff;
-    color: #0d0d0d;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.3s;
-}
+.proyecto-card a { display: inline-block; background-color: #00aaff; color: #0d0d0d; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: transform 0.3s; }
 .proyecto-card a:hover { transform: scale(1.05); }
-
-
-/* ESTILOS PARA HABILIDADES Y CONTACTO (similar a antes pero adaptado) */
 .skill-bar-container { background-color: #333; }
 .skill-bar { background-color: #00aaff; height: 15px; width: 0; border-radius: 10px; transition: width 1.5s ease-in-out; }
 footer { text-align: center; }
 .iconos-contacto a { color: #e0e0e0; font-size: 2.5rem; margin: 0 20px; transition: color 0.3s, transform 0.3s; }
 .iconos-contacto a:hover { color: #00aaff; transform: translateY(-5px); }
-
-/* Animación de entrada para el nombre */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
