@@ -105,19 +105,18 @@ body::before {
 .btn-cv-hero {
     display: inline-block;
     padding: 12px 35px;
-    border: 2px solid transparent; /* Borde transparente por defecto */
+    border: 2px solid transparent;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    background-image: linear-gradient(#0d0d0d, #0d0d0d), linear-gradient(45deg, #00aaff, #aa00ff, #00aaff); /* Doble fondo: uno para el color interior, otro para el borde */
+    background-image: linear-gradient(#0d0d0d, #0d0d0d), linear-gradient(45deg, #00aaff, #aa00ff, #00aaff);
     background-size: 200% 200%;
     animation: moveGradient 4s ease-in-out infinite;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-/* Estilo del texto dentro del botón "ghost" */
 .btn-cv-hero span {
     background: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff);
     -webkit-background-clip: text;
@@ -127,24 +126,24 @@ body::before {
     animation: moveGradient 4s ease-in-out infinite;
 }
 
+/* CORRECCIÓN HOVER DEL BOTÓN */
 .btn-cv-hero:hover {
-    color: #fff;
-    background-clip: padding-box; /* Al pasar el ratón, el fondo de color se aplica a todo el botón */
+    background-image: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff); /* Ahora solo aplica el degradado */
 }
 
 .btn-cv-hero:hover span {
-    -webkit-text-fill-color: #fff; /* El texto se vuelve blanco sólido */
+    -webkit-text-fill-color: #fff;
+    background: none; /* Quitamos el degradado del texto para que sea blanco sólido */
 }
 
-
-/* SECCIONES CON MÁS SEPARACIÓN */
+/* SECCIONES CON EL DOBLE DE SEPARACIÓN */
 main, footer { 
     width: 90%; 
     max-width: 800px; 
     margin: 0 auto; 
-    padding: 150px 0; /* Aumentamos el padding para más espacio */
+    padding: 300px 0; /* Doble de padding */
 }
-#sobre-mi { padding-top: 0; } /* La primera sección no necesita tanto espacio arriba */
+#sobre-mi { padding-top: 150px; } /* Ajustamos la primera sección para que no esté pegada al hero */
 
 h2 { font-size: 2.5rem; color: #00aaff; margin-bottom: 50px; text-align: center; }
 p { font-size: 1.1rem; line-height: 1.7; color: #b3b3b3; }
