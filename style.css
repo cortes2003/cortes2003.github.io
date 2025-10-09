@@ -126,24 +126,33 @@ body::before {
     animation: moveGradient 4s ease-in-out infinite;
 }
 
-/* CORRECCIÓN HOVER DEL BOTÓN */
 .btn-cv-hero:hover {
-    background-image: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff); /* Ahora solo aplica el degradado */
+    background-image: linear-gradient(45deg, #00aaff, #aa00ff, #00aaff);
 }
 
 .btn-cv-hero:hover span {
     -webkit-text-fill-color: #fff;
-    background: none; /* Quitamos el degradado del texto para que sea blanco sólido */
+    background: none;
 }
 
-/* SECCIONES CON EL DOBLE DE SEPARACIÓN */
+/* CONTENEDOR PRINCIPAL Y FOOTER */
 main, footer { 
     width: 90%; 
     max-width: 800px; 
     margin: 0 auto; 
-    padding: 300px 0; /* Doble de padding */
 }
-#sobre-mi { padding-top: 150px; } /* Ajustamos la primera sección para que no esté pegada al hero */
+
+/* CORRECCIÓN: SEPARACIÓN ENTRE SECCIONES */
+main > section {
+    padding-top: 150px; /* Espacio superior para cada sección */
+    padding-bottom: 150px; /* Espacio inferior para cada sección */
+}
+
+/* La primera sección no necesita espacio arriba, ya que viene después del Hero */
+#sobre-mi {
+    padding-top: 100px; 
+}
+
 
 h2 { font-size: 2.5rem; color: #00aaff; margin-bottom: 50px; text-align: center; }
 p { font-size: 1.1rem; line-height: 1.7; color: #b3b3b3; }
