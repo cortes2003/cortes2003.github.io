@@ -8,11 +8,6 @@ Una single-page application (SPA) estática y totalmente responsive construida c
 
 ---
 
-![Captura de pantalla del portfolio](URL_DE_UNA_CAPTURA_DE_PANTALLA_O_GIF_AQUI)
-*Te recomiendo hacer una captura de pantalla de la sección principal y subirla al repositorio para enlazarla aquí.*
-
----
-
 ## Sobre el Proyecto
 
 Este proyecto fue desarrollado desde cero como una forma de aplicar y demostrar mis conocimientos en desarrollo front-end. El objetivo era crear una web limpia, moderna y dinámica que sirviera como mi tarjeta de visita digital para oportunidades profesionales. Todo el diseño y las animaciones se han implementado con CSS puro y JavaScript moderno, sin depender de frameworks externos.
