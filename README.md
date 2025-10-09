@@ -51,5 +51,5 @@ Al ser un proyecto estático, no requiere un servidor complejo ni dependencias.
 
 ## Contacto
 
-* **LinkedIn:** [Tu Perfil de LinkedIn](https://www.linkedin.com/feed/?trk=public_post_google-one-tap-submit)
+* **LinkedIn:** [LinkedIn Alberto Cortes](https://www.linkedin.com/feed/?trk=public_post_google-one-tap-submit)
 * **Email:** [Alberto.Cortes1@alu.uclm.es](mailto:Alberto.Cortes1@alu.uclm.es)
