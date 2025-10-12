@@ -14,10 +14,11 @@ Este proyecto fue desarrollado desde cero como una forma de aplicar y demostrar 
 
 ### Características Principales
 
-* **Diseño Totalmente Responsive:** Adaptable a cualquier dispositivo, desde móviles hasta pantallas de escritorio.
-* **Hero Section Dinámica:** Con fondo animado y un degradado en movimiento para el título y los botones principales.
+* **Diseño Totalmente Responsive:** Adaptable a cualquier dispositivo, desde móviles hasta pantallas de escritorio con breakpoints optimizados.
+* **Sistema de Temas Dinámico:** Toggle deslizable minimalista para alternar entre modo oscuro y claro, con persistencia de preferencias del usuario.
+* **Hero Section Dinámica:** Con fondo animado de estrellas que se adapta al tema seleccionado y degradado en movimiento para el título y botones.
 * **Animaciones al Hacer Scroll:** Los elementos de cada sección aparecen suavemente utilizando la `Intersection Observer API` para una experiencia de usuario fluida y un rendimiento óptimo.
-* **Navegación Fija e Intuitiva:** Un menú lateral en escritorio que se transforma en una barra inferior en móviles para una mejor usabilidad.
+* **Navegación Adaptativa:** Un menú lateral en escritorio que se transforma en una barra inferior en móviles para una mejor usabilidad.
 * **Componentes Interactivos:** Incluye barras de progreso animadas para las habilidades y botones con efectos "ghost" y degradados.
 * **Despliegue Automatizado:** Integrado con **GitHub Actions** para un ciclo de CI/CD que despliega automáticamente cada `push` a la rama `main`.
 
@@ -28,8 +29,8 @@ Este proyecto fue desarrollado desde cero como una forma de aplicar y demostrar 
 El proyecto está construido exclusivamente con las tecnologías base de la web:
 
 * **HTML5:** Para la estructura semántica del contenido.
-* **CSS3:** Para todo el diseño, layout (Flexbox y Grid), animaciones (`@keyframes`) y la responsividad (`@media queries`).
-* **JavaScript (ES6+):** Para la interactividad, el manejo de eventos y las animaciones basadas en el scroll (`IntersectionObserver`).
+* **CSS3:** Para todo el diseño, layout (Flexbox y Grid), animaciones (`@keyframes`), sistema de temas con custom properties y la responsividad (`@media queries`).
+* **JavaScript (ES6+):** Para la interactividad, el manejo de eventos, las animaciones basadas en el scroll (`IntersectionObserver`) y la gestión del sistema de temas con `localStorage`.
 
 ---
 
