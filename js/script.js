@@ -1,6 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. SMOOTH SCROLL
+    // 1. TOGGLE DE TEMA (MODO OSCURO/CLARO)
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Verificar si hay una preferencia guardada o usar la preferencia del sistema
+    const savedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    
+    // Aplicar el tema guardado
+    if (savedTheme === 'light') {
+        body.setAttribute('data-theme', 'light');
+    }
+    
+    // Manejar el click del toggle
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        if (newTheme === 'light') {
+            body.setAttribute('data-theme', 'light');
+        } else {
+            body.removeAttribute('data-theme');
+        }
+        
+        // Guardar la preferencia
+        localStorage.setItem('theme', newTheme);
+    });
+
+    // 2. SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -18,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. ANIMACIÓN DE "FADE-IN" AL HACER SCROLL
+    // 3. ANIMACIÓN DE "FADE-IN" AL HACER SCROLL
     const hiddenElements = document.querySelectorAll('.hidden');
 
     const observer = new IntersectionObserver((entries) => {
@@ -38,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hiddenElements.forEach((el) => observer.observe(el));
 
-    // 3. ANIMACIÓN PARA LAS BARRAS DE HABILIDADES (se activa con la misma lógica)
+    // 4. ANIMACIÓN PARA LAS BARRAS DE HABILIDADES (se activa con la misma lógica)
     const skillsSection = document.querySelector('#habilidades');
     const skillBars = document.querySelectorAll('.skill-bar');
 
