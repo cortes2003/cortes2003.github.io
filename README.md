@@ -32,6 +32,10 @@ El proyecto está construido exclusivamente con las tecnologías base de la web:
 * **CSS3:** Para todo el diseño, layout (Flexbox y Grid), animaciones (`@keyframes`), sistema de temas con custom properties y la responsividad (`@media queries`).
 * **JavaScript (ES6+):** Para la interactividad, el manejo de eventos, las animaciones basadas en el scroll (`IntersectionObserver`) y la gestión del sistema de temas con `localStorage`.
 
+### Configuración de Despliegue
+
+* **`.nojekyll`:** Archivo que deshabilita el procesamiento Jekyll en GitHub Pages, permitiendo que los archivos estáticos se sirvan directamente sin transformaciones adicionales.
+
 ---
 
 ## Cómo Ejecutar el Proyecto Localmente
