@@ -255,6 +255,33 @@ footer {
     z-index: 1001;
 }
 
+/* BRAND LOGO EN EL HERO */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+.brand-logo .logo {
+    display: none;
+    width: 84px;
+    height: 84px;
+    object-fit: contain;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.brand-logo:hover .logo { transform: scale(1.05); }
+
+/* Mostrar la versión adecuada según tema */
+.logo--dark { display: block; }
+
+[data-theme="light"] .logo--dark { display: none; }
+[data-theme="light"] .logo--light { display: block; }
+
+/* opcional: mostrar la versión gradient en hover o usos especiales */
+.logo--gradient { display: none; }
+.brand-logo:hover .logo--gradient { display: block; }
+
+
 .theme-toggle {
     position: relative;
     width: 60px;
