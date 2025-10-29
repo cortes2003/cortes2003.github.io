@@ -269,17 +269,13 @@ footer {
     object-fit: contain;
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
-.brand-logo:hover .logo { transform: scale(1.05); }
 
-/* Mostrar la versión adecuada según tema */
-.logo--dark { display: block; }
+/* Mostrar solo la versión gradient por defecto en ambos temas */
+.logo--gradient { display: block; }
+.logo--gradient { transform-origin: center; }
 
-[data-theme="light"] .logo--dark { display: none; }
-[data-theme="light"] .logo--light { display: block; }
-
-/* opcional: mostrar la versión gradient en hover o usos especiales */
-.logo--gradient { display: none; }
-.brand-logo:hover .logo--gradient { display: block; }
+/* Ocultar explícitamente las versiones light/dark para evitar solapados */
+.logo--dark, .logo--light { display: none !important; }
 
 
 .theme-toggle {
