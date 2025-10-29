@@ -4,6 +4,9 @@
 :root {
     --bg-primary: #0d0d0d;
     --bg-secondary: #1a1a1a;
+    /* RGB variants for use with rgba() in places that need opacity */
+    --bg-primary-rgb: 13, 13, 13;
+    --bg-secondary-rgb: 26, 26, 26;
     --text-primary: #e0e0e0;
     --text-secondary: #b3b3b3;
     --text-accent: #00aaff;
@@ -16,6 +19,9 @@
 [data-theme="light"] {
     --bg-primary: #f8f9fa;
     --bg-secondary: #ffffff;
+    /* RGB variants for light theme */
+    --bg-primary-rgb: 248, 249, 250;
+    --bg-secondary-rgb: 255, 255, 255;
     --text-primary: #2c3e50;
     --text-secondary: #5a6c7d;
     --text-accent: #3498db;
@@ -348,7 +354,9 @@ footer {
         justify-content: center;
         gap: 0;
         transform: none;
-        background-color: rgba(var(--bg-primary-rgb, 13, 13, 13), 0.9);
+          /* Use secondary background for the nav bar so it contrasts with the page bg
+              and so the rgba() responds to the current theme via --bg-secondary-rgb */
+          background-color: rgba(var(--bg-secondary-rgb, 26, 26, 26), 0.9);
         backdrop-filter: blur(10px);
         padding: 10px 0;
         border-top: 1px solid var(--border-color);
