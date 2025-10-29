@@ -17,8 +17,9 @@
 }
 
 [data-theme="light"] {
-    --bg-primary: #f8f9fa;
-    --bg-secondary: #ffffff;
+    /* Ajustes más suaves para modo claro (blanco roto más oscuro y menos brillante) */
+    --bg-primary: #e9e6e2; /* blanco roto más oscuro, reduce el brillo al pasar desde oscuro */
+    --bg-secondary: #f3f1ef; /* fondo secundario suavizado para barras y tarjetas */
     /* RGB variants for light theme */
     --bg-primary-rgb: 248, 249, 250;
     --bg-secondary-rgb: 255, 255, 255;
@@ -27,8 +28,8 @@
     --text-accent: #3498db;
     --border-color: #e9ecef;
     --card-bg: #ffffff;
-    --star-color: #333;
-    --star-opacity: 0.3;
+    --star-color: #000; /* estrellas negras en modo claro */
+    --star-opacity: 0.8; /* claramente visibles en modo claro */
 }
 
 body {
