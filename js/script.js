@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
         body.setAttribute('data-theme', 'light');
     }
     
+    // Función para cambiar el favicon en tiempo real
+    function setFavicon(href) {
+        if (!href) return;
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+        link.href = href;
+    }
+
+    // Establecer favicon inicial según el tema guardado
+    if (savedTheme === 'light') {
+        setFavicon('assets/favicon_gradient/favicon-32x32.png');
+    } else {
+        setFavicon('assets/favicon_gradient/favicon.ico');
+    }
+    
     // Manejar el click del toggle
     themeToggle.addEventListener('click', () => {
         const currentTheme = body.getAttribute('data-theme');
@@ -26,6 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Guardar la preferencia
         localStorage.setItem('theme', newTheme);
+        // Actualizar favicon según tema
+        if (newTheme === 'light') {
+            setFavicon('assets/favicon_gradient/favicon-32x32.png');
+        } else {
+            setFavicon('assets/favicon_gradient/favicon.ico');
+        }
     });
 
     // 2. SMOOTH SCROLL

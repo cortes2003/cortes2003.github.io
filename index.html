@@ -6,6 +6,12 @@
     <title>Alberto Cortés Herranz - Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Favicon / App icons (desde carpeta assets/favicon_gradient/) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_gradient/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_gradient/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_gradient/apple-touch-icon.png">
+    <link rel="manifest" href="assets/favicon_gradient/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon_gradient/favicon.ico">
 </head>
 <body>
 
@@ -27,6 +33,15 @@
 
     <div id="hero">
         <div class="hero-content">
+                <!-- Brand logo: multiple image files for dark/light/gradient versions -->
+                <div class="brand-logo" role="img" aria-label="Logo Alberto Cortés Herranz">
+                    <!-- Versión para tema oscuro (logo claro sobre fondo oscuro) -->
+                    <img class="logo logo--dark" src="assets/logo-dark.png" alt="Logo blanco" />
+                    <!-- Versión para tema claro (logo oscuro sobre fondo claro) -->
+                    <img class="logo logo--light" src="assets/logo-light.png" alt="Logo oscuro" />
+                    <!-- Versión con degradado para usos destacados -->
+                    <img class="logo logo--gradient" src="assets/logo-gradient.png" alt="Logo degradado" />
+                </div>
             <h1 class="hero-name">Alberto Cortés Herranz</h1>
             <a href="assets/CV.pdf" download class="btn-cv-hero"><span>Descargar CV</span></a>
         </div>
