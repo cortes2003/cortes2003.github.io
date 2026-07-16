@@ -254,7 +254,41 @@ main > section {
 .proyecto-card h3 { color: var(--text-primary); margin-top: 0; }
 .proyecto-card p { margin-bottom: 15px; }
 .skills-intro { text-align: center; margin-bottom: 30px; }
-.soft-skills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+.skills-categories { display: flex; flex-direction: column; gap: 14px; }
+.skill-category {
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.04);
+    overflow: hidden;
+}
+.skill-category summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.skill-category summary::-webkit-details-marker { display: none; }
+.skill-category summary::after {
+    content: '+';
+    font-size: 1.1rem;
+    color: var(--text-accent);
+}
+.skill-category[open] summary::after {
+    content: '−';
+}
+.skill-category__content {
+    padding: 0 18px 18px;
+    display: grid;
+    gap: 12px;
+}
+.skill-category__content .skill {
+    margin: 0;
+}
+.soft-skills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; margin-top: 4px; }
 .soft-skills span { padding: 8px 14px; border: 1px solid var(--border-color); border-radius: 999px; color: var(--text-secondary); font-size: 0.95rem; background: rgba(255,255,255,0.04); }
 
 /* BOTONES "VER CÓDIGO" CON DEGRADADO ESTÁTICO */
