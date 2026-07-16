@@ -96,89 +96,76 @@
             <p class="skills-intro">Organizo mi perfil en categorías para mostrar mejor mi experiencia técnica, mi formación y mis competencias personales.</p>
 
             <div class="skills-categories">
-                <details class="skill-category" open>
-                    <summary>Desarrollo Backend y Frameworks</summary>
-                    <div class="skill-category__content">
-                        <div class="skill"><p>Java (Spring Boot)</p><div class="skill-bar-container"><div class="skill-bar" data-progress="85%"></div></div></div>
-                        <div class="skill"><p>Python (Django)</p><div class="skill-bar-container"><div class="skill-bar" data-progress="80%"></div></div></div>
-                        <div class="skill"><p>C#</p><div class="skill-bar-container"><div class="skill-bar" data-progress="65%"></div></div></div>
-                    </div>
-                </details>
+                <div class="skills-tabs" role="tablist" aria-label="Categorías de habilidades">
+                    <button class="skill-tab active" data-target="tab-backend">Backend</button>
+                    <button class="skill-tab" data-target="tab-devops">DevOps</button>
+                    <button class="skill-tab" data-target="tab-web">Web</button>
+                    <button class="skill-tab" data-target="tab-databases">Bases de datos</button>
+                    <button class="skill-tab" data-target="tab-testing">Testing</button>
+                    <button class="skill-tab" data-target="tab-architecture">Arquitectura</button>
+                    <button class="skill-tab" data-target="tab-tools">Herramientas</button>
+                    <button class="skill-tab" data-target="tab-soft">Personal</button>
+                </div>
 
-                <details class="skill-category">
-                    <summary>DevOps y Control de Versiones</summary>
-                    <div class="skill-category__content">
-                        <div class="skill"><p>Git / GitHub</p><div class="skill-bar-container"><div class="skill-bar" data-progress="82%"></div></div></div>
-                        <div class="skill"><p>Docker</p><div class="skill-bar-container"><div class="skill-bar" data-progress="70%"></div></div></div>
-                        <div class="skill"><p>Grafana</p><div class="skill-bar-container"><div class="skill-bar" data-progress="60%"></div></div></div>
-                        <div class="skill"><p>Fundamentos de CI/CD</p><div class="skill-bar-container"><div class="skill-bar" data-progress="68%"></div></div></div>
-                    </div>
-                </details>
+                <div class="skill-panel active" id="tab-backend">
+                    <div class="skill"><p>Java (Spring Boot)</p><div class="skill-bar-container"><div class="skill-bar" data-progress="85%"></div></div></div>
+                    <div class="skill"><p>Python (Django)</p><div class="skill-bar-container"><div class="skill-bar" data-progress="80%"></div></div></div>
+                    <div class="skill"><p>C#</p><div class="skill-bar-container"><div class="skill-bar" data-progress="65%"></div></div></div>
+                </div>
 
-                <details class="skill-category">
-                    <summary>Desarrollo Web y Frontend</summary>
-                    <div class="skill-category__content">
-                        <div class="skill"><p>HTML</p><div class="skill-bar-container"><div class="skill-bar" data-progress="78%"></div></div></div>
-                        <div class="skill"><p>CSS</p><div class="skill-bar-container"><div class="skill-bar" data-progress="76%"></div></div></div>
-                        <div class="skill"><p>JavaScript</p><div class="skill-bar-container"><div class="skill-bar" data-progress="72%"></div></div></div>
-                        <div class="skill"><p>XAML</p><div class="skill-bar-container"><div class="skill-bar" data-progress="58%"></div></div></div>
-                    </div>
-                </details>
+                <div class="skill-panel" id="tab-devops">
+                    <div class="skill"><p>Git / GitHub</p><div class="skill-bar-container"><div class="skill-bar" data-progress="82%"></div></div></div>
+                    <div class="skill"><p>Docker</p><div class="skill-bar-container"><div class="skill-bar" data-progress="70%"></div></div></div>
+                    <div class="skill"><p>Grafana</p><div class="skill-bar-container"><div class="skill-bar" data-progress="60%"></div></div></div>
+                    <div class="skill"><p>Fundamentos de CI/CD</p><div class="skill-bar-container"><div class="skill-bar" data-progress="68%"></div></div></div>
+                </div>
 
-                <details class="skill-category">
-                    <summary>Bases de Datos</summary>
-                    <div class="skill-category__content">
-                        <div class="skill"><p>MySQL</p><div class="skill-bar-container"><div class="skill-bar" data-progress="76%"></div></div></div>
-                        <div class="skill"><p>PostgreSQL</p><div class="skill-bar-container"><div class="skill-bar" data-progress="74%"></div></div></div>
-                        <div class="skill"><p>SQL Server</p><div class="skill-bar-container"><div class="skill-bar" data-progress="70%"></div></div></div>
-                        <div class="skill"><p>Neo4j</p><div class="skill-bar-container"><div class="skill-bar" data-progress="60%"></div></div></div>
-                    </div>
-                </details>
+                <div class="skill-panel" id="tab-web">
+                    <div class="skill"><p>HTML</p><div class="skill-bar-container"><div class="skill-bar" data-progress="78%"></div></div></div>
+                    <div class="skill"><p>CSS</p><div class="skill-bar-container"><div class="skill-bar" data-progress="76%"></div></div></div>
+                    <div class="skill"><p>JavaScript</p><div class="skill-bar-container"><div class="skill-bar" data-progress="72%"></div></div></div>
+                    <div class="skill"><p>XAML</p><div class="skill-bar-container"><div class="skill-bar" data-progress="58%"></div></div></div>
+                </div>
 
-                <details class="skill-category">
-                    <summary>Testing y Calidad</summary>
-                    <div class="skill-category__content">
-                        <div class="skill"><p>JUnit</p><div class="skill-bar-container"><div class="skill-bar" data-progress="72%"></div></div></div>
-                        <div class="skill"><p>PyTest</p><div class="skill-bar-container"><div class="skill-bar" data-progress="68%"></div></div></div>
-                        <div class="skill"><p>Análisis de cobertura</p><div class="skill-bar-container"><div class="skill-bar" data-progress="66%"></div></div></div>
-                    </div>
-                </details>
+                <div class="skill-panel" id="tab-databases">
+                    <div class="skill"><p>MySQL</p><div class="skill-bar-container"><div class="skill-bar" data-progress="76%"></div></div></div>
+                    <div class="skill"><p>PostgreSQL</p><div class="skill-bar-container"><div class="skill-bar" data-progress="74%"></div></div></div>
+                    <div class="skill"><p>SQL Server</p><div class="skill-bar-container"><div class="skill-bar" data-progress="70%"></div></div></div>
+                    <div class="skill"><p>Neo4j</p><div class="skill-bar-container"><div class="skill-bar" data-progress="60%"></div></div></div>
+                </div>
 
-                <details class="skill-category">
-                    <summary>Arquitectura y Metodologías</summary>
-                    <div class="skill-category__content">
-                        <div class="skill"><p>POO</p><div class="skill-bar-container"><div class="skill-bar" data-progress="84%"></div></div></div>
-                        <div class="skill"><p>Patrones de Diseño</p><div class="skill-bar-container"><div class="skill-bar" data-progress="74%"></div></div></div>
-                        <div class="skill"><p>Arquitectura Multicapa</p><div class="skill-bar-container"><div class="skill-bar" data-progress="70%"></div></div></div>
-                        <div class="skill"><p>Agile / Scrum</p><div class="skill-bar-container"><div class="skill-bar" data-progress="72%"></div></div></div>
-                    </div>
-                </details>
+                <div class="skill-panel" id="tab-testing">
+                    <div class="skill"><p>JUnit</p><div class="skill-bar-container"><div class="skill-bar" data-progress="72%"></div></div></div>
+                    <div class="skill"><p>PyTest</p><div class="skill-bar-container"><div class="skill-bar" data-progress="68%"></div></div></div>
+                    <div class="skill"><p>Análisis de cobertura</p><div class="skill-bar-container"><div class="skill-bar" data-progress="66%"></div></div></div>
+                </div>
 
-                <details class="skill-category">
-                    <summary>Herramientas</summary>
-                    <div class="skill-category__content">
-                        <div class="skill"><p>Visual Studio 2022</p><div class="skill-bar-container"><div class="skill-bar" data-progress="74%"></div></div></div>
-                        <div class="skill"><p>Visual Studio Code</p><div class="skill-bar-container"><div class="skill-bar" data-progress="80%"></div></div></div>
-                        <div class="skill"><p>Odoo</p><div class="skill-bar-container"><div class="skill-bar" data-progress="62%"></div></div></div>
-                        <div class="skill"><p>Power BI</p><div class="skill-bar-container"><div class="skill-bar" data-progress="58%"></div></div></div>
-                    </div>
-                </details>
+                <div class="skill-panel" id="tab-architecture">
+                    <div class="skill"><p>POO</p><div class="skill-bar-container"><div class="skill-bar" data-progress="84%"></div></div></div>
+                    <div class="skill"><p>Patrones de Diseño</p><div class="skill-bar-container"><div class="skill-bar" data-progress="74%"></div></div></div>
+                    <div class="skill"><p>Arquitectura Multicapa</p><div class="skill-bar-container"><div class="skill-bar" data-progress="70%"></div></div></div>
+                    <div class="skill"><p>Agile / Scrum</p><div class="skill-bar-container"><div class="skill-bar" data-progress="72%"></div></div></div>
+                </div>
 
-                <details class="skill-category">
-                    <summary>Competencias personales</summary>
-                    <div class="skill-category__content">
-                        <div class="soft-skills">
-                            <span>Trabajo en equipo</span>
-                            <span>Aprendizaje rápido</span>
-                            <span>Adaptabilidad</span>
-                            <span>Responsabilidad</span>
-                            <span>Proactividad</span>
-                            <span>Organización</span>
-                            <span>Resolución de problemas</span>
-                            <span>Comunicación</span>
-                        </div>
+                <div class="skill-panel" id="tab-tools">
+                    <div class="skill"><p>Visual Studio 2022</p><div class="skill-bar-container"><div class="skill-bar" data-progress="74%"></div></div></div>
+                    <div class="skill"><p>Visual Studio Code</p><div class="skill-bar-container"><div class="skill-bar" data-progress="80%"></div></div></div>
+                    <div class="skill"><p>Odoo</p><div class="skill-bar-container"><div class="skill-bar" data-progress="62%"></div></div></div>
+                    <div class="skill"><p>Power BI</p><div class="skill-bar-container"><div class="skill-bar" data-progress="58%"></div></div></div>
+                </div>
+
+                <div class="skill-panel" id="tab-soft">
+                    <div class="soft-skills">
+                        <span>Trabajo en equipo</span>
+                        <span>Aprendizaje rápido</span>
+                        <span>Adaptabilidad</span>
+                        <span>Responsabilidad</span>
+                        <span>Proactividad</span>
+                        <span>Organización</span>
+                        <span>Resolución de problemas</span>
+                        <span>Comunicación</span>
                     </div>
-                </details>
+                </div>
             </div>
         </section>
     </main>

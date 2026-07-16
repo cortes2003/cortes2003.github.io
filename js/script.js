@@ -106,4 +106,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     skillsObserver.observe(skillsSection);
 
+    // 5. PESTAÑAS DE HABILIDADES
+    const skillTabs = document.querySelectorAll('.skill-tab');
+    const skillPanels = document.querySelectorAll('.skill-panel');
+
+    skillTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-target');
+
+            skillTabs.forEach(btn => btn.classList.remove('active'));
+            skillPanels.forEach(panel => panel.classList.remove('active'));
+
+            tab.classList.add('active');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+
 });
