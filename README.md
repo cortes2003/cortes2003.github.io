@@ -19,7 +19,7 @@ Este proyecto fue desarrollado desde cero como una forma de aplicar y demostrar 
 * **Hero Section Dinámica:** Con fondo animado de estrellas que se adapta al tema seleccionado y degradado en movimiento para el título y botones.
 * **Animaciones al Hacer Scroll:** Los elementos de cada sección aparecen suavemente utilizando la `Intersection Observer API` para una experiencia de usuario fluida y un rendimiento óptimo.
 * **Navegación Adaptativa:** Un menú lateral en escritorio que se transforma en una barra inferior en móviles para una mejor usabilidad.
-* **Componentes Interactivos:** Incluye barras de progreso animadas para las habilidades y botones con efectos "ghost" y degradados.
+* **Componentes Interactivos:** Incluye habilidades organizadas en pestañas por categoría y botones con efectos "ghost" y degradados.
 * **Despliegue Automatizado:** Integrado con **GitHub Actions** para un ciclo de CI/CD que despliega automáticamente cada `push` a la rama `main`.
 
 ---
@@ -56,5 +56,5 @@ Al ser un proyecto estático, no requiere un servidor complejo ni dependencias.
 
 ## Contacto
 
-* **LinkedIn:** [LinkedIn Alberto Cortes](https://www.linkedin.com/feed/?trk=public_post_google-one-tap-submit)
-* **Email:** [Alberto.Cortes1@alu.uclm.es](mailto:Alberto.Cortes1@alu.uclm.es)
+* **LinkedIn:** [LinkedIn Alberto Cortés Herranz](https://www.linkedin.com/in/albertocortesherranz)
+* **Email:** [alberto.cortesherranz@gmail.com](mailto:alberto.cortesherranz@gmail.com)

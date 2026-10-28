@@ -91,22 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hiddenElements.forEach((el) => observer.observe(el));
 
-    // 4. ANIMACIÓN PARA LAS BARRAS DE HABILIDADES (se activa con la misma lógica)
-    const skillsSection = document.querySelector('#habilidades');
-    const skillBars = document.querySelectorAll('.skill-bar');
-
-    const skillsObserver = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            skillBars.forEach(bar => {
-                bar.style.width = bar.getAttribute('data-progress');
-            });
-            skillsObserver.unobserve(skillsSection);
-        }
-    }, { threshold: 0.5 });
-
-    skillsObserver.observe(skillsSection);
-
-    // 5. PESTAÑAS DE HABILIDADES
+    // 4. PESTAÑAS DE HABILIDADES
     const skillTabs = document.querySelectorAll('.skill-tab');
     const skillPanels = document.querySelectorAll('.skill-panel');
 

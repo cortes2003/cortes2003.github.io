@@ -289,8 +289,15 @@ main > section {
     display: grid;
     gap: 12px;
 }
-.soft-skills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; margin-top: 4px; }
-.soft-skills span { padding: 8px 14px; border: 1px solid var(--border-color); border-radius: 999px; color: var(--text-secondary); font-size: 0.95rem; background: rgba(255,255,255,0.04); }
+.skill-chips { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; margin-top: 4px; }
+.skill-chips span { padding: 8px 14px; border: 1px solid var(--border-color); border-radius: 999px; color: var(--text-secondary); font-size: 0.95rem; background: rgba(255,255,255,0.04); }
+
+/* EXPERIENCIA Y FORMACIÓN */
+.cv-subtitle { color: var(--text-primary); font-size: 1.4rem; margin: 56px 0 20px; }
+.cv-list { display: grid; gap: 12px; }
+.cv-item { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px 24px; padding: 18px 22px; border: 1px solid var(--border-color); border-radius: 20px; background: var(--card-bg); color: var(--text-primary); }
+.cv-item p { margin: 6px 0 0; font-size: 1rem; }
+.cv-item > span { color: var(--text-accent); font-size: 0.95rem; white-space: nowrap; }
 
 /* BOTONES "VER CÓDIGO" CON DEGRADADO ESTÁTICO */
 .proyecto-card a { 
@@ -307,16 +314,6 @@ main > section {
 .proyecto-card a:hover { 
     transform: translateY(-2px); 
     box-shadow: 0 12px 24px rgba(124, 58, 237, 0.26);
-}
-
-/* BARRAS DE HABILIDAD */
-.skill-bar-container { background-color: var(--border-color); border-radius: 10px; overflow: hidden; }
-.skill-bar { 
-    background: linear-gradient(90deg, #00aaff, #aa00ff);
-    height: 15px; 
-    width: 0; 
-    border-radius: 10px; 
-    transition: width 1.5s ease-in-out; 
 }
 
 /* FOOTER */
